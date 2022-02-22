@@ -13,21 +13,30 @@ document.getElementById("uploadedImg").onchange = function(e) {
       });
       imgWidth = img.width * img.scaleX;
       imgHeight = img.height * img.scaleY;
+      const x = img.scaleX;
+      const y = img.scaleY;
+      console.log(x,y)
+      
       img.scaleToWidth(110);
       canvas.centerObject(img).add(img).setActiveObject(img).renderAll();
       //Mouse Scroll In and Scroll Out
       canvas.on("mouse:move", function(event) {
-        currentMouseY = Math.round(event.e.y - canvas._offset.top);
-        currentMouseX = Math.round(event.e.x - canvas._offset.left);
+        currentMouseY = Math.round((event.e.y - canvas._offset.top));
+        currentMouseX = Math.round((event.e.x - canvas._offset.left));
         console.log(currentMouseX,currentMouseY);
     });
       canvas.on('mouse:wheel', function(opt) {
         var delta = opt.e.deltaY;
+        const amnt = opt.e.deltaY < 0 ? 1.1 : .9;
+        // console.log(amnt)
         var zoom = canvas.getZoom();
         zoom = zoom + delta/200;
         if (zoom > 20) zoom = 20;
         if (zoom < 1) zoom = 1;
-        canvas.setZoom(zoom);
+        console.log(zoom)
+        canvas.zoomToPoint(new fabric.Point(currentMouseX,currentMouseY),zoom)
+        console.log(currentMouseX,currentMouseY);
+        // canvas.setZoom(zoom);
         opt.e.preventDefault();
         opt.e.stopPropagation();
         var vpt = this.viewportTransform;
@@ -86,14 +95,13 @@ function deleteObjects(e) {
 }
 
 
-// Reset to original position
+//Reset to original position
 // var reset = document.getElementById('reset');
 // reset.addEventListener('click',resetImage, false);
 
 // function resetImage(e) {
-//   var img = canvas.getActiveObject();
-//   img.scaleToWidth(110);
-//   canvas.centerObject(img).add(img).setActiveObject(img).renderAll();
+
+//   canvas.setZoom(1);
 // }
 
 
