@@ -1,0 +1,25 @@
+<!-- index.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Web Site FabricJS"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Image</title>
+  </head>
+  <body>
+    <h3 class="text-style"> Canvas Image </h3>
+    <div class="style-input">
+        <input type="file" id="uploadedImg"/>
+        <button id="remove" >Clear All</button>
+        <button class="download" id="download"> Download </button>
+        <button id="objects"> Delete Objects</button>
+        <!-- <button id="reset"> Reset Image Position</button> -->
+    </div>
+    <canvas id="c" ></canvas>
+ </body>
+  <script src="scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>

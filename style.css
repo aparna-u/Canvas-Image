@@ -1,0 +1,32 @@
+.lower-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;  
+}
+.upper-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+}
+.canvas-container {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px;
+  top: 30px;
+ 
+  border: 1px dotted #ccc;
+}
+.style-input{
+  text-align:center;
+  padding-top:90px;
+}
+
+.download{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.text-style{
+  text-align: center;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
